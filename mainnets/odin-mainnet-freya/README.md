@@ -103,25 +103,35 @@ odind keys show <key-name> -a
 ```
 
 ### Set minimum gas fees
-perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125loki"/' ~/.odind/config/app.toml
+perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125loki"/' ~/.odin/config/app.toml
 
 
 ## Instructions for Genesis Validators
 
 ### Create Gentx
 
+1. Download pre-genesis
+```bash:
+curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/pre-genesis.json > ~/.odin/config/genesis.json
+```
+
+Verify the hash `906fe3745f55ad5181cbd99225521512dbd6144d14c2656be201fd81b13ddfea`:
+```
+jq -S -c -M ' ' ~/.odin/config/genesis.json | shasum -a 256
+```
+
 1. Add genesis account:
 **WARNING: DO NOT PUT MORE THAN 10000000loki or your gentx will be rejected**
 **NOTE**: For genesis validators, set your commission rate between 5% and 10%
 
 ```
-odind add-genesis-account "{{KEY_NAME}}" 10000000loki
+odind add-genesis-account "{{KEY_NAME}}" 10000000loki --chain-id odin-mainnet-freya
 ```
 
 2. Create Gentx
 ```
 odind gentx "{{KEY_NAME}}" 10000000loki \
---chain-id odin-1 \
+--chain-id odin-mainnet-freya \
 --moniker="{{VALIDATOR_NAME}}" \
 --commission-max-change-rate=0.05 \
 --commission-max-rate=0.20 \
@@ -133,17 +143,17 @@ odind gentx "{{KEY_NAME}}" 10000000loki \
 
 ### Submit PR with Gentx and peer id
 
-1. Copy the contents of ${HOME}/.odind/config/gentx/gentx-XXXXXXXX.json.
+1. Copy the contents of ${HOME}/.odin/config/gentx/gentx-XXXXXXXX.json.
 
 2. Fork the repository
 
-3. Create a file gentx-{{VALIDATOR_NAME}}.json under the mainnets/odin-1/gentxs folder in the forked repo, paste the copied text into the file. Find reference file gentx-examplexxxxxxxx.json in the same folder.
+3. Create a file gentx-{{VALIDATOR_NAME}}.json under the mainnets/odin-mainnet-freya/gentxs folder in the forked repo, paste the copied text into the file. Find reference file gentx-examplexxxxxxxx.json in the same folder.
 
 4. Run `odind tendermint show-node-id` and copy your nodeID.
 
 5. Run `ifconfig` or `curl ipinfo.io/ip` and copy your publicly reachable IP address.
 
-6. Create a file peers-{{VALIDATOR_NAME}}.json under the mainnet/odin-1/peers folder in the forked repo, paste the copied text from the last two steps into the file. Find reference file sample-peers.txt in the same folder. (e.g. `fd4351c2e9928213b3d6ddce015c4664e6138@3.127.204.206:26656`)
+6. Create a file peers-{{VALIDATOR_NAME}}.json under the mainnet/odin-mainnet-freya/peers folder in the forked repo, paste the copied text from the last two steps into the file. Find reference file sample-peers.txt in the same folder. (e.g. `fd4351c2e9928213b3d6ddce015c4664e6138@3.127.204.206:26656`)
 
 7. Create a Pull Request to the main branch of the repository
 
@@ -153,17 +163,17 @@ odind gentx "{{KEY_NAME}}" 10000000loki \
 ### Add persistent peers
 ```bash:
 PEERS = TBD
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.odind/config/config.toml
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.odin/config/config.toml
 ```
 
 ### Download genesis file
 ```bash:
-curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/genesis.json > ~/.odind/config/genesis.json
+curl TBD > ~/.odin/config/genesis.json
 ```
 
-Verify the hash `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`:
+Verify the hash `TBD`:
 ```
-jq -S -c -M ' ' ~/.odind/config/genesis.json | shasum -a 256
+jq -S -c -M ' ' ~/.odin/config/genesis.json | shasum -a 256
 ```
 
 ### Setup Unit/Daemon file
