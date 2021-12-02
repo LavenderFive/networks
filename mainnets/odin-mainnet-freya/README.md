@@ -158,10 +158,10 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" ~/.odind
 
 ### Download genesis file
 ```bash:
-curl TBD > ~/.odind/config/genesis.json
+curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/genesis.json > ~/.odind/config/genesis.json
 ```
 
-Verify the hash:
+Verify the hash `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`:
 ```
 jq -S -c -M ' ' ~/.odind/config/genesis.json | shasum -a 256
 ```
