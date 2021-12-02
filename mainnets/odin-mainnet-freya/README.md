@@ -122,10 +122,11 @@ jq -S -c -M ' ' ~/.odin/config/genesis.json | shasum -a 256
 
 #### 2. Add genesis account:
 **WARNING: DO NOT PUT MORE THAN 10000000loki or your gentx will be rejected**
+
 **NOTE**: For genesis validators, set your commission rate between 5% and 10%
 
 ```
-odind add-genesis-account "{{KEY_NAME}}" 10000000loki --chain-id odin-mainnet-freya
+odind add-genesis-account "{{KEY_NAME}}" 10000000loki
 ```
 
 #### 3. Create Gentx
