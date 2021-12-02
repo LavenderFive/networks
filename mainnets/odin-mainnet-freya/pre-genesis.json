@@ -20,7 +20,44 @@
     },
     "version": {}
   },
-  "validators": [],
+  "validators": [
+    {
+      "address": "A89E994001937C100ABA7C96CF93427E60DD4073",
+      "pub_key": {
+        "type": "tendermint/PubKeySecp256k1",
+        "value": "A6/d6hichc9Hf73l0T8wHA49joGiOI7/r+fdyOILFxuF"
+      },
+      "power": "1000",
+      "name": "validator1"
+    },
+    {
+      "address": "472E645AF6EB906D7BA829F434400380A29DFC0B",
+      "pub_key": {
+        "type": "tendermint/PubKeySecp256k1",
+        "value": "AhNBC9psk+udS/HC4UiY49pZclAXNVlKij2cTZA2MyBH"
+      },
+      "power": "1000",
+      "name": "validator2"
+    },
+    {
+      "address": "66842F384035B042CEB8702FCE426B5A4B1D24E0",
+      "pub_key": {
+        "type": "tendermint/PubKeySecp256k1",
+        "value": "A8n0GHICcSO0ePRnlb2TNCS7xC6szbUl3kYq4DNIi4uh"
+      },
+      "power": "1000",
+      "name": "validator3"
+    },
+    {
+      "address": "7B2ED83A2BA505F86031F4F5D250A6822EAACC8C",
+      "pub_key": {
+        "type": "tendermint/PubKeySecp256k1",
+        "value": "AomZrDITs1vUbJXVx5sTpb3jbE2PkaNC+NI+YPGyj6Xs"
+      },
+      "power": "1000",
+      "name": "validator4"
+    }
+  ],
   "app_hash": "",
   "app_state": {
     "auth": {
@@ -406,7 +443,92 @@
       },
       "last_total_power": "0",
       "last_validator_powers": [],
-      "validators": [ ],
+      "validators": [
+        {
+          "description": {
+            "moniker": "validator1"
+          },
+          "commission": {
+            "commission_rates": {
+              "rate": "0.100000000000000000",
+              "max_rate": "0.200000000000000000",
+              "max_change_rate": "0.010000000000000000"
+            }
+          },
+          "status": "BOND_STATUS_UNBONDED",
+          "delegator_shares": "0.000000000000000000",
+          "min_self_delegation": "1",
+          "operator_address": "odinvaloper14z0fjsqpjd7pqz460jtvly6z0esd6srnch6yzu",
+          "consensus_pubkey": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "A6/d6hichc9Hf73l0T8wHA49joGiOI7/r+fdyOILFxuF"
+          },
+          "tokens": "1000000000"
+        },
+        {
+          "description": {
+            "moniker": "validator2"
+          },
+          "commission": {
+            "commission_rates": {
+              "rate": "0.100000000000000000",
+              "max_rate": "0.200000000000000000",
+              "max_change_rate": "0.010000000000000000"
+            }
+          },
+          "status": "BOND_STATUS_UNBONDED",
+          "delegator_shares": "0.000000000000000000",
+          "min_self_delegation": "1",
+          "operator_address": "odinvaloper1guhxgkhkawgx67ag986rgsqrsz3fmlqth36txs",
+          "consensus_pubkey": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "AhNBC9psk+udS/HC4UiY49pZclAXNVlKij2cTZA2MyBH"
+          },
+          "tokens": "1000000000"
+        },
+        {
+          "description": {
+            "moniker": "validator3"
+          },
+          "commission": {
+            "commission_rates": {
+              "rate": "0.100000000000000000",
+              "max_rate": "0.200000000000000000",
+              "max_change_rate": "0.010000000000000000"
+            }
+          },
+          "status": "BOND_STATUS_UNBONDED",
+          "delegator_shares": "0.000000000000000000",
+          "min_self_delegation": "1",
+          "operator_address": "odinvaloper1v6zz7wzqxkcy9n4cwqhuusnttf936f8qv9nr09",
+          "consensus_pubkey": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "A8n0GHICcSO0ePRnlb2TNCS7xC6szbUl3kYq4DNIi4uh"
+          },
+          "tokens": "1000000000"
+        },
+        {
+          "description": {
+            "moniker": "validator4"
+          },
+          "commission": {
+            "commission_rates": {
+              "rate": "0.100000000000000000",
+              "max_rate": "0.200000000000000000",
+              "max_change_rate": "0.010000000000000000"
+            }
+          },
+          "status": "BOND_STATUS_UNBONDED",
+          "delegator_shares": "0.000000000000000000",
+          "min_self_delegation": "1",
+          "operator_address": "odinvaloper10vhdsw3t55zlscp37n6ay59xsgh24nyvnrn5z6",
+          "consensus_pubkey": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "AomZrDITs1vUbJXVx5sTpb3jbE2PkaNC+NI+YPGyj6Xs"
+          },
+          "tokens": "1000000000"
+        }
+      ],
       "delegations": [],
       "unbonding_delegations": [],
       "redelegations": [],
