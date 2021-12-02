@@ -58,7 +58,7 @@ Output should be: `go version go1.17.3 linux/amd64`
 
 ### Install Odind from source
 
-1. Clone repository
+#### 1. Clone repository
 ```bash:
 git clone https://github.com/GeoDB-Limited/odin-core.git
 cd odin-core
@@ -68,7 +68,7 @@ git checkout v0.1.0
 
 Once you're on the correct tag, you can build:
 
-2. Install CLI
+#### 2. Install CLI
 While inside `~/odin-core/`
 ```bash:
 make install
@@ -110,7 +110,7 @@ perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125loki"/' ~/
 
 ### Create Gentx
 
-1. Download pre-genesis
+#### 1. Download pre-genesis
 ```bash:
 curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/pre-genesis.json > ~/.odin/config/genesis.json
 ```
@@ -120,7 +120,7 @@ Verify the hash `906fe3745f55ad5181cbd99225521512dbd6144d14c2656be201fd81b13ddfe
 jq -S -c -M ' ' ~/.odin/config/genesis.json | shasum -a 256
 ```
 
-1. Add genesis account:
+#### 2. Add genesis account:
 **WARNING: DO NOT PUT MORE THAN 10000000loki or your gentx will be rejected**
 **NOTE**: For genesis validators, set your commission rate between 5% and 10%
 
@@ -128,7 +128,7 @@ jq -S -c -M ' ' ~/.odin/config/genesis.json | shasum -a 256
 odind add-genesis-account "{{KEY_NAME}}" 10000000loki --chain-id odin-mainnet-freya
 ```
 
-2. Create Gentx
+#### 3. Create Gentx
 ```
 odind gentx "{{KEY_NAME}}" 10000000loki \
 --chain-id odin-mainnet-freya \
