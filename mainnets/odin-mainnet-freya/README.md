@@ -116,7 +116,7 @@ perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125loki"/' ~/
 curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/pre_genesis.json > ~/.odin/config/genesis.json
 ```
 
-Verify the hash `906fe3745f55ad5181cbd99225521512dbd6144d14c2656be201fd81b13ddfea`:
+Verify the hash `0b745f361ee055775bce7d5eec04edd228698d0a13f1eeef7c5f3edf3dc87640`:
 ```
 jq -S -c -M ' ' ~/.odin/config/genesis.json | shasum -a 256
 ```
