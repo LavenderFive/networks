@@ -1,7 +1,6 @@
-# odin-mainnet-freya
+# ODIN MAINNET FREYA
 
-## Genesis Time
-The genesis transactions sent before {DATETIME} will be used to publish the genesis.json on or before {DATETIME} and then start the chain at 1400UTC. We will be announcing on all the platforms for the same. Please join our [Discord](https://discord.gg/cUXKyRq) and [Odin Telegram Group](https://t.me/odinprotocol) to stay updated.
+## First part is to submit the gentx. WHICH IS CLOSED NOW.
 
 ### Hardware Requirements
 #### Minimum
@@ -108,11 +107,13 @@ perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125loki"/' ~/
 
 ## Instructions for Genesis Validators
 
+### GenTx : Will Be Accepting Soon
+
 ### Create Gentx
 
 #### 1. Download pre-genesis
 ```bash:
-curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/pre-genesis.json > ~/.odin/config/genesis.json
+curl https://raw.githubusercontent.com/ODIN-PROTOCOL/networks/master/mainnets/odin-mainnet-freya/pre_genesis.json > ~/.odin/config/genesis.json
 ```
 
 Verify the hash `906fe3745f55ad5181cbd99225521512dbd6144d14c2656be201fd81b13ddfea`:
